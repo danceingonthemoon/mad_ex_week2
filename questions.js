@@ -1,10 +1,8 @@
 /**
  * @file questions.js
- * @description This file contains programming exercises for Week 1 of the
+ * @description This file contains programming exercises for Week 2 of the
  *              Mobile Application Development course. It includes a series of
- *              JavaScript challenges that focus on fundamental programming
- *              concepts such as variables, operators, data types, and control
- *              structures.
+ *              JavaScript challenges that focus functions, closures etc.
  *
  *              Students are expected to write their code solutions within this
  *              file in the designated sections for each exercise. The provided
