@@ -46,6 +46,12 @@
 
 function accountGenerator(accountName, initBalance) {
   // Your implementation here
+  let balance = initBalance;
+  function myAccount(deposit) {
+    balance += deposit;
+    return `You deposited ${deposit} to your ${accountName} Account and the current balance is ${balance}.`;
+  }
+  return myAccount;
 }
 
 /**
@@ -69,6 +75,15 @@ function accountGenerator(accountName, initBalance) {
 
 function distributeTips(...args) {
   // Your implementation here
+  let result = { food: 0, drink: 0 };
+  for (let i = 0; i < args.length; i++) {
+    if (i % 2 === 0) {
+      result.food += args[i];
+    } else {
+      result.drink += args[i];
+    }
+  }
+  return result;
 }
 
 /**
@@ -100,6 +115,14 @@ function distributeTips(...args) {
 
 function greetingGenerator(defaultGreeting = "Hello") {
   // Your implementation here
+  function formalGreet(name, greeting) {
+    if (greeting) {
+      return `${greeting}, ${name}!`;
+    } else {
+      return `${defaultGreeting}, ${name}!`;
+    }
+  }
+  return formalGreet;
 }
 
 /**
@@ -123,6 +146,24 @@ function greetingGenerator(defaultGreeting = "Hello") {
 
 function mergeAndExtract(array1, array2) {
   // Your implementation here
+  const mergedArrays = [...array1, ...array2];
+  let result = { first: 0, second: 0, remaining: 0 };
+
+  //   const [first, second, ...remaining] = mergedArrays;
+
+  //   return {
+  //     first: first,
+  //     second: second,
+  //     remaining: remaining,
+  //   };
+
+  function firstSec() {
+    result.first = mergedArrays[0];
+    result.second = mergedArrays[1];
+    result.remaining = mergedArrays.slice(2);
+  }
+  firstSec();
+  return result;
 }
 
 /**
@@ -152,7 +193,23 @@ function mergeAndExtract(array1, array2) {
  */
 
 function calculateAlternatingHarmonic(n, accumulator = 0, index = 1) {
+  // if the current index exceeds n, return the final accumulated sum
+  // if (index > n) {
+  //   return accumulator;
+  // }
+  // const term = (1 / index) * (index % 2 === 0 ? -1 : 1);
+  // const addedAccumulator = accumulator + term;
+
+  // // make recursive call with the updated parameters
+  // return calculateAlternatingHarmonic(n, addedAccumulator, index + 1);
   // Your implementation here
+  //2: for loop method
+  let result = accumulator;
+  for (let i = 1; i <= n; i++) {
+    const term = (1 / i) * (i % 2 === 0 ? -1 : 1);
+    result += term;
+  }
+  return result;
 }
 
 // Export the function for testing
